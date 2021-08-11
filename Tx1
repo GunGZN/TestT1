@@ -61,7 +61,7 @@ wget -q -O ovpn.tar "$kguza/conf/openvpn.tar"
 tar xf ovpn.tar
 rm ovpn.tar
 
-cat > /etc/openvpn/KGUZA.ovpn <<EOF1
+cat > /etc/openvpn/GunX.ovpn <<EOF1
 client
 dev tun
 proto tcp
@@ -98,7 +98,7 @@ $(cat /etc/openvpn/ca.pem)
 </ca>
 EOF1
 
-cat > /etc/openvpn/KGUZA.ovpn << KGUZA
+cat > /etc/openvpn/GunX.ovpn << GunX
 client
 dev tun
 proto tcp
@@ -135,8 +135,8 @@ $(cat /etc/openvpn/ca.pem)
 </ca>
 KGUZA
 
-cat > /etc/openvpn/KGUZAZA.ovpn <<EOF1
-client 🇹🇭kguza-vpn🇹🇭
+cat > /etc/openvpn/GunX.ovpn <<EOF1
+client 🇹🇭GunX-vpn🇹🇭
 verb 3
 dev tun
 nobind
@@ -170,11 +170,11 @@ $(cat /etc/openvpn/client-cert.pem)
 <ca>
 $(cat /etc/openvpn/ca.pem)
 </ca>
-####KGUZA-VPN###
+####GunX-VPN###
 EOF1
 
-cat > /etc/openvpn/KGUZAZA.ovpn << KGUZA
-client 🇹🇭kguza-vpn🇹🇭
+cat > /etc/openvpn/GunX.ovpn << GunX
+client 🇹🇭GunX-vpn🇹🇭
 verb 3
 dev tun
 nobind
@@ -208,8 +208,8 @@ $(cat /etc/openvpn/client-cert.pem)
 <ca>
 $(cat /etc/openvpn/ca.pem)
 </ca>
-####KGUZA-VPN###
-KGUZA
+####GunX-VPN###
+GunX
 
 # Restart Service
 ok "❯❯❯ service openvpn restart"
@@ -358,14 +358,14 @@ service openvpn restart -q > /dev/null 2>&1
 #แจ้งเตือนคนรันสคิป
 IP=$(wget -qO- ipv4.icanhazip.com);
 curl -X POST -H 'Authorization: Bearer RSEzjR0dYrnlIGASIopAcT8Ph4uNkm9PYCbcoFTm0Zm' -F 'message='" 
-Load_file  $IP/KGUZA.ovpn "'' https://notify-api.line.me/api/notify > /dev/null 2>&1
+Load_file  $IP/GunX.ovpn "'' https://notify-api.line.me/api/notify > /dev/null 2>&1
 
 echo "ติดตั้งเสร็จเรียบร้อย" > /usr/bin/install_full
 
-mv /etc/openvpn/KGUZA.ovpn /home/vps/public_html/KGUZA.ovpn
+mv /etc/openvpn/GunX.ovpn /home/vps/public_html/GunX.ovpn
 
-mv /etc/openvpn/KGUZAZA.ovpn /home/vps/public_html/KGUZAZA.ovpn
-rm /home/vps/public_html/KGUZAZA.ovpn
+mv /etc/openvpn/KGUZAZA.ovpn /home/vps/public_html/GunX.ovpn
+rm /home/vps/public_html/GunX.ovpn
 
 if [[ "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="18.04"' ]]; then
 echo " "
@@ -376,7 +376,7 @@ echo " ┈╭━━━━━━━━━━━━━━━━━━━━━━�
 echo " ┈┣ Vnstat http://$SERVER_IP/vnstat/"
 echo " ┈╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯"
 echo " ┈╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮"
-echo " ┈┣ Load file http://$SERVER_IP/KGUZA.ovpn"
+echo " ┈┣ Load file http://$SERVER_IP/GunX.ovpn"
 echo " ┈╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯"
 echo " ┈╭━━━━━━━━━━━━━━━━━━━━━╮"
 echo " ┈┣ พิมพ์ menu เพื่อใช้งาน"
@@ -392,7 +392,7 @@ echo " ┈╭━━━━━━━━━━━━━━━━━━━━━━�
 echo " ┈┣ Vnstat http://$SERVER_IP/vnstat/"
 echo " ┈╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯"
 echo " ┈╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮"
-echo " ┈┣ Load file http://$SERVER_IP/KGUZA.ovpn"
+echo " ┈┣ Load file http://$SERVER_IP/GunX.ovpn"
 echo " ┈╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯"
 echo " ┈╭━━━━━━━━━━━━━━━━━━━━━╮"
 echo " ┈┣ พิมพ์ menu เพื่อใช้งาน"
@@ -478,6 +478,6 @@ service openvpn restart
 #Print info
 clear
 echo "====================================="
-echo "kguza vpn"
+echo "GunX vpn"
 echo "Squid 3.3.8 ok"
 echo "====================================="
